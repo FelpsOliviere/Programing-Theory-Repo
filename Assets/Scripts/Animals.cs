@@ -4,14 +4,14 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Windows.Speech;
 
-public class Animals : MonoBehaviour
+public class Animals : MonoBehaviour //Inheritance
 {
     public void PlayAnimalSound(AudioSource audioSource)
     {
         audioSource.Play();
     }
 
-    public void Jump(Vector3 direction, float speed, bool canGo)
+    public void Jump(Vector3 direction, float speed, bool canGo)// Abstraction
     {
         if (canGo)
         {
@@ -19,7 +19,7 @@ public class Animals : MonoBehaviour
         }
     }
 
-    public void Jump(Vector3 direction, float jumpForce, Rigidbody rb, bool canGo)
+    public void Jump(Vector3 direction, float jumpForce, Rigidbody rb, bool canGo) // Abstraction
     {
         if (canGo)
         {

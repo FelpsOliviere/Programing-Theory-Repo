@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Doe : Animals
+public class Doe : Animals //Inheritance
 {
     AudioSource audioSource;
     public TextMeshProUGUI animalText;
     public bool canGo = true;
-    public string animalname { get; private set; }
+    public string animalname { get; private set; } // Encapsulation
 
     // Start is called before the first frame update
     void Start()
@@ -26,14 +26,19 @@ public class Doe : Animals
             canGo = false;
         }
 
-        Jump(Vector3.up, 10f, canGo);
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            canGo = true;
+        }
+
+        Jump(Vector3.up, 10f, canGo);// Polymorphism
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayAnimalSound(audioSource);
+            PlayAnimalSound(audioSource);// Polymorphism
         }
     }
 }
